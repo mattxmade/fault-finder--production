@@ -3,3 +3,7 @@
 
 # node modules
 node_modules
+
+# css
+*.css
+*.css.map
