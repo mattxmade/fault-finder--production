@@ -41,6 +41,7 @@ const App = () => {
       <main>
         <form>
           <label htmlFor="fault-code">
+            Fault Search
             <input
               name="fault-code"
               onChange={onInputChange}
@@ -49,7 +50,7 @@ const App = () => {
           </label>
         </form>
 
-        <section className="results">
+        <section className="search-results">
           {query && results.length ? (
             <p style={{ fontWeight: "bold" }}>
               {results.length === 1
@@ -61,7 +62,7 @@ const App = () => {
           {query && results.length ? (
             results.map((result: FaultItem, i) => (
               <ul key={nanoid()} className="fault-cards">
-                <li className=" fault-cards__item">
+                <li className="fault-cards__item">
                   <div className="fault-cards__item--brand">
                     <span className="tag">
                       <i
@@ -132,10 +133,10 @@ const App = () => {
               </ul>
             ))
           ) : query && !results.length ? (
-            <p>No results</p>
+            <p style={{ justifySelf: "center" }}>No results</p>
           ) : (
             <>
-              <p>New Search</p>
+              <p style={{ justifySelf: "center" }}>New Search</p>
             </>
           )}
         </section>
