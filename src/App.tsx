@@ -1,12 +1,25 @@
 import { nanoid } from "nanoid";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { FormEvent, useCallback, useEffect, useState } from "react";
 
 import faultSearch from "./utils/faultSearch";
 
+import ToggleSwitch from "./components/ToggleSwitch";
 import BackgroundSvg from "./components/svg/BackgroundSvg";
+
 import "./App.scss";
 
 const App = () => {
+  const [theme, setTheme] = useState<"--light" | "--dark">("--light");
+
+  // TODO: create useTheme hook
+  const onToggleTheme = useCallback(() => {
+    const { body } = document;
+
+    theme === "--light"
+      ? (body.style.backgroundColor = "black") && setTheme("--dark")
+      : (body.style.backgroundColor = "white") && setTheme("--light");
+  }, [theme]);
+
   const [query, setQuery] = useState<string>("");
   const [results, setResults] = useState<any[]>([]);
 
@@ -20,8 +33,13 @@ const App = () => {
     [query]
   );
 
+  const onFormSubmit = useCallback(
+    (e: FormEvent) => e.preventDefault(),
+    [onInputChange]
+  );
+
   useEffect(() => {
-    if (query.length) {
+    if (query?.length) {
       if (results) setResults([]);
 
       const searchResults = faultSearch(query);
@@ -36,14 +54,18 @@ const App = () => {
       </div>
 
       <header>
-        <h1>Boiler Fault Finder</h1>
+        <h1 className={`theme${theme}`}>Boiler Fault Finder</h1>
+        <ToggleSwitch
+          callback={onToggleTheme}
+          aria-label="dark mode theme toggle"
+        />
       </header>
       <main>
-        <form>
-          <label htmlFor="fault-code">
+        <form className={`theme${theme}`} onSubmit={onFormSubmit}>
+          <label htmlFor="search-input" className={`theme${theme}`}>
             Fault Search
             <input
-              name="fault-code"
+              name="search-input"
               onChange={onInputChange}
               placeholder="Enter a fault code, model or brand name"
             />
@@ -63,7 +85,7 @@ const App = () => {
             results.map((result: FaultItem, i) => (
               <ul key={nanoid()} className="fault-cards">
                 <li className="fault-cards__item">
-                  <div className="fault-cards__item--brand">
+                  <div className={`fault-cards__item--brand theme${theme}`}>
                     <span className="tag">
                       <i
                         className="fa-solid fa-shield"
@@ -72,11 +94,11 @@ const App = () => {
                       />
                       Brand
                     </span>
-                    <h2>{result.brand}</h2>
+                    <h2 className={`theme${theme}`}>{result.brand}</h2>
                   </div>
                 </li>
                 <li className="fault-cards__item">
-                  <div className="fault-cards__item--code">
+                  <div className={`fault-cards__item--code theme${theme}`}>
                     <span className="tag">
                       <i
                         className="fa-solid fa-triangle-exclamation"
@@ -89,7 +111,7 @@ const App = () => {
                   </div>
 
                   {result.faultCause ? (
-                    <div className="fault-cards__item--cause">
+                    <div className={`fault-cards__item--cause theme${theme}`}>
                       <span className="tag">
                         <i
                           className="fa-solid fa-screwdriver-wrench"
@@ -104,7 +126,7 @@ const App = () => {
                   ) : null}
 
                   {result.faultCheck ? (
-                    <div className="fault-cards__item--details">
+                    <div className={`fault-cards__item--details theme${theme}`}>
                       <span className="tag">
                         <i
                           className="fa-solid fa-circle-info"
@@ -118,7 +140,7 @@ const App = () => {
                   ) : null}
                 </li>
                 <li className="fault-cards__item">
-                  <div className="fault-cards__item--model">
+                  <div className={`fault-cards__item--model theme${theme}`}>
                     <span className="tag">
                       <i
                         className="fa-solid fa-layer-group"
@@ -134,11 +156,7 @@ const App = () => {
             ))
           ) : query && !results.length ? (
             <p style={{ justifySelf: "center" }}>No results</p>
-          ) : (
-            <>
-              <p style={{ justifySelf: "center" }}>New Search</p>
-            </>
-          )}
+          ) : null}
         </section>
       </main>
 
