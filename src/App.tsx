@@ -19,7 +19,9 @@ const App = () => {
       </div>
 
       <header className={`theme${theme}`}>
-        <h1 className={`theme${theme}`}>Boiler Fault Finder</h1>
+        <h1 className={`theme${theme}`}>
+          <i className="fa-solid fa-fire-burner" /> Fault Finder
+        </h1>
         <ToggleSwitch callback={onToggleTheme} aria-label="Light/Dark Theme">
           <i
             className={`fa-solid ${theme === "--light" ? "fa-sun" : "fa-moon"}`}
