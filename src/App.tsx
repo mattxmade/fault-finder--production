@@ -3,22 +3,14 @@ import React, { FormEvent, useCallback, useEffect, useState } from "react";
 
 import faultSearch from "./utils/faultSearch";
 
+import useTheme from "./hooks/useTheme";
 import ToggleSwitch from "./components/ToggleSwitch";
 import BackgroundSvg from "./components/svg/BackgroundSvg";
 
 import "./App.scss";
 
 const App = () => {
-  const [theme, setTheme] = useState<"--light" | "--dark">("--light");
-
-  // TODO: create useTheme hook
-  const onToggleTheme = useCallback(() => {
-    const { body } = document;
-
-    theme === "--light"
-      ? (body.style.backgroundColor = "black") && setTheme("--dark")
-      : (body.style.backgroundColor = "white") && setTheme("--light");
-  }, [theme]);
+  const { theme, onToggleTheme } = useTheme();
 
   const [query, setQuery] = useState<string>("");
   const [results, setResults] = useState<any[]>([]);
@@ -55,10 +47,7 @@ const App = () => {
 
       <header>
         <h1 className={`theme${theme}`}>Boiler Fault Finder</h1>
-        <ToggleSwitch
-          callback={onToggleTheme}
-          aria-label="dark mode theme toggle"
-        />
+        <ToggleSwitch callback={onToggleTheme} />
       </header>
       <main>
         <form className={`theme${theme}`} onSubmit={onFormSubmit}>
