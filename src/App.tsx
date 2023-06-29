@@ -1,9 +1,8 @@
 import { nanoid } from "nanoid";
-import React, { FormEvent, useCallback, useEffect, useState } from "react";
-
-import faultSearch from "./utils/faultSearch";
+import React from "react";
 
 import useTheme from "./hooks/useTheme";
+import useSearch from "./hooks/useSearch";
 import ToggleSwitch from "./components/ToggleSwitch";
 import BackgroundSvg from "./components/svg/BackgroundSvg";
 
@@ -11,33 +10,7 @@ import "./App.scss";
 
 const App = () => {
   const { theme, onToggleTheme } = useTheme();
-
-  const [query, setQuery] = useState<string>("");
-  const [results, setResults] = useState<any[]>([]);
-
-  const onInputChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      e.preventDefault();
-
-      const input = e.target as HTMLInputElement;
-      setQuery(input.value);
-    },
-    [query]
-  );
-
-  const onFormSubmit = useCallback(
-    (e: FormEvent) => e.preventDefault(),
-    [onInputChange]
-  );
-
-  useEffect(() => {
-    if (query?.length) {
-      if (results) setResults([]);
-
-      const searchResults = faultSearch(query);
-      if (searchResults) setResults(searchResults);
-    }
-  }, [query]);
+  const { query, results, onInputChange, onFormSubmit } = useSearch();
 
   return (
     <div className="page">
