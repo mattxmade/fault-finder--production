@@ -36,7 +36,21 @@ const ToggleSwitch = ({ callback, ...props }: Props) => {
           transition: "0.3s",
           transform: toggle ? "translate(2.2rem, 0rem)" : "translate(0, 0rem)",
         }}
-      />
+      >
+        {props.children ? (
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            {props.children}
+          </div>
+        ) : null}
+      </div>
     </button>
   );
 };
