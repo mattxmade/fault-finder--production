@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap"); // p
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"); // span
 @import url("https://fonts.googleapis.com/css2?family=Exo+2:wght@600&display=swap"); // h2
-@import url("https://fonts.googleapis.com/css2?family=Slackside+One&display=swap"); // h1 title
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap"); // h1 title
 
 *,
 *::before,
@@ -37,8 +37,8 @@ h2 {
 }
 
 h1 {
-  font-size: 4rem;
-  font-family: "Slackside One", cursive;
+  font-size: min(6vw, 3rem);
+  font-family: "Bruno Ace", cursive;
 }
 
 h2 {
@@ -76,7 +76,7 @@ header {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  padding: 0 var(--padding) 0;
+  padding: 0 0.5rem 0 1rem;
 
   button {
     margin-bottom: 0.5rem;
