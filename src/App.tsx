@@ -13,14 +13,18 @@ const App = () => {
   const { query, results, onInputChange, onFormSubmit } = useSearch();
 
   return (
-    <div className="page">
+    <div className={`page theme${theme}`}>
       <div className="svg-background">
         <BackgroundSvg />
       </div>
 
-      <header>
+      <header className={`theme${theme}`}>
         <h1 className={`theme${theme}`}>Boiler Fault Finder</h1>
-        <ToggleSwitch callback={onToggleTheme} />
+        <ToggleSwitch callback={onToggleTheme}>
+          <i
+            className={`fa-solid ${theme === "--light" ? "fa-sun" : "fa-moon"}`}
+          />
+        </ToggleSwitch>
       </header>
       <main>
         <form className={`theme${theme}`} onSubmit={onFormSubmit}>
@@ -45,9 +49,9 @@ const App = () => {
 
           {query && results.length ? (
             results.map((result: FaultItem, i) => (
-              <ul key={nanoid()} className="fault-cards">
-                <li className="fault-cards__item">
-                  <div className={`fault-cards__item--brand theme${theme}`}>
+              <ul key={nanoid()} className="fault-card">
+                <li className="fault-card__item">
+                  <div className={`fault-card__item--brand theme${theme}`}>
                     <span className="tag">
                       <i
                         className="fa-solid fa-shield"
@@ -59,8 +63,8 @@ const App = () => {
                     <h2 className={`theme${theme}`}>{result.brand}</h2>
                   </div>
                 </li>
-                <li className="fault-cards__item">
-                  <div className={`fault-cards__item--code theme${theme}`}>
+                <li className="fault-card__item">
+                  <div className={`fault-card__item--code theme${theme}`}>
                     <span className="tag">
                       <i
                         className="fa-solid fa-triangle-exclamation"
@@ -73,7 +77,7 @@ const App = () => {
                   </div>
 
                   {result.faultCause ? (
-                    <div className={`fault-cards__item--cause theme${theme}`}>
+                    <div className={`fault-card__item--cause theme${theme}`}>
                       <span className="tag">
                         <i
                           className="fa-solid fa-screwdriver-wrench"
@@ -88,7 +92,7 @@ const App = () => {
                   ) : null}
 
                   {result.faultCheck ? (
-                    <div className={`fault-cards__item--details theme${theme}`}>
+                    <div className={`fault-card__item--details theme${theme}`}>
                       <span className="tag">
                         <i
                           className="fa-solid fa-circle-info"
@@ -101,8 +105,8 @@ const App = () => {
                     </div>
                   ) : null}
                 </li>
-                <li className="fault-cards__item">
-                  <div className={`fault-cards__item--model theme${theme}`}>
+                <li className="fault-card__item">
+                  <div className={`fault-card__item--model theme${theme}`}>
                     <span className="tag">
                       <i
                         className="fa-solid fa-layer-group"
