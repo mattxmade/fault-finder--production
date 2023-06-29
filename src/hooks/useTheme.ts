@@ -1,14 +1,16 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+
+const localTheme = localStorage.getItem("theme");
 
 const useTheme = () => {
-  const [theme, setTheme] = useState<"--light" | "--dark">("--light");
+  const [theme, setTheme] = useState<string>(localTheme ?? "--light");
 
   const onToggleTheme = useCallback(() => {
-    const { body } = document;
+    theme === "--light" ? setTheme("--dark") : setTheme("--light");
+  }, [theme]);
 
-    theme === "--light"
-      ? (body.style.backgroundColor = "black") && setTheme("--dark")
-      : (body.style.backgroundColor = "white") && setTheme("--light");
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   return { theme, onToggleTheme };
