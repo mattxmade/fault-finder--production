@@ -34,8 +34,11 @@ const App = () => {
             Fault Search
             <input
               name="search-input"
+              value={query}
               onChange={onInputChange}
-              placeholder="Enter a fault code, model or brand name"
+              placeholder={
+                query ? undefined : "Enter a fault code, model or brand name"
+              }
             />
           </label>
         </form>
