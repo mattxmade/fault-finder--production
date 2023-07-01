@@ -1,5 +1,7 @@
 import brands from "../../data/brands";
 
+brands.map((brand) => console.table({ name: brand.name, id: brand.id }));
+
 const faultSearch = (string: string) => {
   const matches: FaultItem[] = [];
   const exactMatch: FaultItem[] = [];
