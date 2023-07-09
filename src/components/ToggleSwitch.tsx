@@ -1,4 +1,4 @@
-import React, { DetailedHTMLProps, useCallback, useState } from "react";
+import React, { useCallback, useState } from "react";
 
 type Props = {
   callback: () => void;
