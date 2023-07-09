@@ -7,3 +7,9 @@ node_modules
 # css
 *.css
 *.css.map
+
+# dist folder
+dist
+
+# Thumbnails
+Thumbs.db
