@@ -1,3 +1,6 @@
+import { FaultItem } from "../types";
+import { BrandItem } from "../types";
+
 import brands from "../../data/brands";
 
 const faultSearch = (string: string) => {
