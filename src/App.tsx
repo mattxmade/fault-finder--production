@@ -1,6 +1,8 @@
 import { nanoid } from "nanoid";
 import React from "react";
 
+import { FaultItem } from "./types";
+
 import useTheme from "./hooks/useTheme";
 import useSearch from "./hooks/useSearch";
 import ToggleSwitch from "./components/ToggleSwitch";
