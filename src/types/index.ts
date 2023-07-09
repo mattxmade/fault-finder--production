@@ -1,8 +1,11 @@
-type BrandItem = {
+export type BrandItem = {
   id: string | any;
   name: string;
 
-  info: { website: string | ""; manual: { page: number; link: string | "" } };
+  info?: {
+    website?: string | "";
+    manual?: { page: number; link: string | "" };
+  };
 
   hasIcon: boolean;
   hasFlash: boolean;
@@ -12,7 +15,7 @@ type BrandItem = {
   faultCodes: FaultItem[];
 };
 
-type FaultItem = {
+export type FaultItem = {
   brand: string;
   model: string;
   faultType: "CODE" | "LED" | "ICON" | "NOTE";
@@ -20,7 +23,4 @@ type FaultItem = {
   faultIcon?: string | undefined;
   faultCause?: string | undefined;
   faultCheck?: string | undefined;
-
-  cause?: string;
-  component?: string;
 };
