@@ -1,5 +1,5 @@
 {
-  "name": "fault-finder",
+  "name": "fault-finder--production",
   "version": "1.0.0",
   "description": "A boiler fault code search web application",
   "private": true,
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mattxmade/fault-finder.git"
+    "url": "git+https://github.com/mattxmade/fault-finder--production.git"
   },
   "keywords": [],
   "author": "mattxmade",
   "bugs": {
-    "url": "https://github.com/mattxmade/fault-finder/issues"
+    "url": "https://github.com/mattxmade/fault-finder--production/issues"
   },
-  "homepage": "https://github.com/mattxmade/fault-finder#readme",
+  "homepage": "https://github.com/mattxmade/fault-finder--production#readme",
   "dependencies": {
     "nanoid": "^4.0.2",
     "react": "^18.2.0",
