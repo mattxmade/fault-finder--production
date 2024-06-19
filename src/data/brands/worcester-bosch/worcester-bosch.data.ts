@@ -1,7 +1,7 @@
 import { nanoid } from "nanoid"
 import { BrandItem } from "../../../types"
 
-"Worcester Bosch Boiler Fault Codes"
+// "Worcester Bosch Boiler Fault Codes"
 
 export const brand_worcester_bosch: BrandItem = {
   id: nanoid(),

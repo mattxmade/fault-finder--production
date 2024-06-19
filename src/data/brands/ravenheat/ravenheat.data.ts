@@ -1,7 +1,7 @@
 import { nanoid } from "nanoid"
 import { BrandItem } from "../../../types"
 
-"Ravenheat Boiler Fault Codes"
+// "Ravenheat Boiler Fault Codes"
 
 export const brand_ravenheat: BrandItem = {
   id: nanoid(),

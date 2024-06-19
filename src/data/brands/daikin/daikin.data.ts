@@ -1,7 +1,7 @@
 import { nanoid } from "nanoid"
 import { BrandItem } from "../../../types"
 
-"Daikin Combi Gas Boiler Fault Codes"
+// "Daikin Combi Gas Boiler Fault Codes"
 
 export const brand_daikin: BrandItem = {
   id: nanoid(),

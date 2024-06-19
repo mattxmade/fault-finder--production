@@ -1,7 +1,7 @@
 import { nanoid } from "nanoid"
 import { BrandItem } from "../../../types"
 
-"Baxi Platinum Fault Codes"
+// "Baxi Platinum Fault Codes"
 
 export const brand_baxi: BrandItem = {
   id: nanoid(),

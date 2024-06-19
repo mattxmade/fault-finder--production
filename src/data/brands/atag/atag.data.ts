@@ -2,7 +2,7 @@ import { nanoid } from "nanoid"
 import { BrandItem } from "../../../types";
 import { atag_faultCodes } from "./atag_fault_codes.data";
 
-"ATAG Boiler Error Codes"
+// "ATAG Boiler Error Codes"
 
 export const brand_atag: BrandItem = {
   id: nanoid(),

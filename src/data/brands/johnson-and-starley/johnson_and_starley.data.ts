@@ -1,7 +1,7 @@
 import { nanoid } from "nanoid"
 import { BrandItem } from "../../../types"
 
-"Johnson & Starley Boiler Fault Codes"
+// "Johnson & Starley Boiler Fault Codes"
 
 export const brand_johnson_and_starley: BrandItem = {
   id: nanoid(),
