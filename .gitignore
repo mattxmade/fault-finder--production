@@ -1,4 +1,4 @@
-# extenstion
+# extension
 *.ignore.*
 
 # node modules
@@ -13,3 +13,9 @@ dist
 
 # Thumbnails
 Thumbs.db
+
+# Vercel
+.vercel
+
+.env
+*.env
