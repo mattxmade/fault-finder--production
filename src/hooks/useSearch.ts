@@ -37,13 +37,17 @@ const useSearch = () => {
     [onInputChange]
   );
 
-  useEffect(() => {
+  const getResults = async () => {
     if (query?.length) {
       if (results) setResults([]);
 
-      const searchResults = faultSearch(query);
+      const searchResults = await faultSearch(query);
       if (searchResults) setResults(searchResults);
     }
+  };
+
+  useEffect(() => {
+    getResults();
   }, [query]);
 
   // local storage
