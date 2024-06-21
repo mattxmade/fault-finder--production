@@ -13,7 +13,8 @@ import toggleFixedLayout from "./utils/toggleFixedLayout";
 
 const App = () => {
   const { theme, onToggleTheme } = useTheme();
-  const { query, results, onInputChange, onFormSubmit } = useSearch();
+  const { query, results, onInputChange, onClearInput, onFormSubmit } =
+    useSearch();
 
   const scrollY = useRef(0);
   const dialogRef = useRef<HTMLDialogElement | null>(null);
@@ -85,6 +86,9 @@ const App = () => {
                   query ? undefined : "Enter a fault code or manufacturer"
                 }
               />
+              <button aria-label="Clear search field" onClick={onClearInput}>
+                <i className={`fa fa-solid fa-circle-xmark icon${theme}`} />
+              </button>
             </label>
           </form>
 
