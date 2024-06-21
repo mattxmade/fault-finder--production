@@ -3,7 +3,7 @@ import { BrandItem } from "../types";
 
 import brands from "../data/brands";
 
-const faultSearch = (string: string) => {
+const faultSearch = async (string: string) => {
   const matches: FaultItem[] = [];
   const exactMatch: FaultItem[] = [];
   const brandMatches: FaultItem[] = [];
@@ -16,11 +16,14 @@ const faultSearch = (string: string) => {
     const brandName = brand.name.toLowerCase();
 
     brand.faultCodes.map((item) => {
+      searchQuery === item.faultCode.toLowerCase() && exactMatch.push(item);
+      if (exactMatch.length) return;
+
       queryList.includes(brandName)
         ? queryList.some((query) => query === item.faultCode.toLowerCase())
           ? exactMatch.push(item)
           : brandMatches.push(item)
-        : queryList.some((query) => query === item.faultCode.toLowerCase()) &&
+        : item.faultCode.toLowerCase().includes(searchQuery) &&
           matches.push(item);
     });
 
