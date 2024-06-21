@@ -21,10 +21,10 @@ const App = () => {
   const handleDialog = () => {
     if (!dialogRef.current) return;
 
-    scrollY.current = window.scrollY;
-
     if (!dialogRef.current.open) {
       dialogRef.current.showModal();
+
+      scrollY.current = window.scrollY;
       toggleFixedLayout(true, scrollY.current);
       return;
     }
@@ -82,7 +82,7 @@ const App = () => {
                 value={query}
                 onChange={onInputChange}
                 placeholder={
-                  query ? undefined : "Enter a fault code, model or brand name"
+                  query ? undefined : "Enter a fault code or manufacturer"
                 }
               />
             </label>
@@ -137,7 +137,13 @@ const App = () => {
                           Fault Cause
                         </span>
 
-                        <p>{result.faultCause}</p>
+                        <ul style={{ display: "grid" }}>
+                          {result.faultCause.split("\n").map((faultCause) => (
+                            <li key={faultCause}>
+                              <p>{faultCause}</p>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     ) : null}
 
