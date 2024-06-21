@@ -25,15 +25,15 @@ export const brand_vaillant: BrandItem = {
       faultType: "CODE",
       faultCode: "F.00",
       faultCause: "NTC FAULTS",
-      faultCheck: "This means that your Flow NTC (Negative Temperature Coefficient Thermostat) \ncable is either defective or broken and needs to be replaced"
+      faultCheck: "This means that your Flow NTC (Negative Temperature Coefficient Thermostat) cable is either defective or broken and needs to be replaced"
     },
     {
       brand: "Vaillant",
       model: "Turbomax Plus 824/828E",
       faultType: "CODE",
       faultCode: "F.01",
-      faultCause: "NTC FAULTS (feed temperature sensor)\n – faulty connection and open circuit.",
-      faultCheck: "This means that your Flow NTC (Negative Temperature Coefficient Thermostat) \ncable is either defective or broken and needs to be replaced"
+      faultCause: "NTC FAULTS (feed temperature sensor) – faulty connection and open circuit.",
+      faultCheck: "This means that your Flow NTC (Negative Temperature Coefficient Thermostat) cable is either defective or broken and needs to be replaced"
     },
     {
       brand: "Vaillant",
@@ -62,7 +62,7 @@ export const brand_vaillant: BrandItem = {
       faultType: "CODE",
       faultCode: "F.20",
       faultCause: "NTC FAULTS (feed temperature sensor)",
-      faultCheck: "Your boiler has exceeded the maximum temperature \nand needs to be allowed to cool down"
+      faultCheck: "Your boiler has exceeded the maximum temperature and needs to be allowed to cool down"
     },
     {
       brand: "Vaillant",
@@ -70,7 +70,7 @@ export const brand_vaillant: BrandItem = {
       faultType: "CODE",
       faultCode: "F.22",
       faultCause: "DRY FIRE, LOW WATER IN SYSTEM/OVERHEAT",
-      faultCheck: "This means that there’s either no water in your system,\n you have a defective pump or the pump lead is defective"
+      faultCheck: "This means that there’s either no water in your system, you have a defective pump or the pump lead is defective"
     },
     {
       brand: "Vaillant",
@@ -78,7 +78,7 @@ export const brand_vaillant: BrandItem = {
       faultType: "CODE",
       faultCode: "F.24",
       faultCause: "LOW WATER, OR PUMP FAILURE/BLOCKAGE",
-      faultCheck: "Your pump could be obstructed, running at low capacity, \nor there could be air trapped in your appliance. \nAdditionally, the pressure in your system might be too low."
+      faultCheck: "Your pump could be obstructed, running at low capacity, or there could be air trapped in your appliance. \nAdditionally, the pressure in your system might be too low."
     },
     {
       brand: "Vaillant",
@@ -86,7 +86,7 @@ export const brand_vaillant: BrandItem = {
       faultType: "CODE",
       faultCode: "F.28",
       faultCause: "NO IGNITION/IGNITION PROBLEM",
-      faultCheck: "This means there’s either insufficient gas in the system, a defective electrode, \nignition lead or electronic ignitor"
+      faultCheck: "This means there’s either insufficient gas in the system, a defective electrode, ignition lead or electronic ignitor"
     },
     {
       brand: "Vaillant",
@@ -94,7 +94,7 @@ export const brand_vaillant: BrandItem = {
       faultType: "CODE",
       faultCode: "F.29",
       faultCause: "FLAME EXTINGUISHED. FAN/FLUE PROBLEM/GAS",
-      faultCheck: "Your flame, or pilot light has gone out. Check your flue duct or gas supply to \nsee if there is a problem there."
+      faultCheck: "Your flame, or pilot light has gone out. Check your flue duct or gas supply to see if there is a problem there."
     },
     {
       brand: "Vaillant",
@@ -158,7 +158,7 @@ export const brand_vaillant: BrandItem = {
       model: "EcoMax Pro 18/28E",
       faultType: "CODE",
       faultCode: "F.1",
-      faultCause: "Lack of gas, a fault with the ignition or flue or you may need to adjust the \ngas valve or replace a defective electrode lead."
+      faultCause: "Lack of gas, a fault with the ignition or flue or you may need to adjust the gas valve or replace a defective electrode lead."
     },
     {
       brand: "Vaillant",
@@ -193,7 +193,7 @@ export const brand_vaillant: BrandItem = {
       model: "EcoMax Pro 18/28E",
       faultType: "CODE",
       faultCode: "F.24",
-      faultCause: "Pump-related faults – the pump could have failed, it may have over run or\n there could be an issue with the airlock"
+      faultCause: "Pump-related faults – the pump could have failed, it may have over run or there could be an issue with the airlock"
     },
 
     //"Vaillant Ecomax Pro 828E Boiler Error Codes"
@@ -202,7 +202,7 @@ export const brand_vaillant: BrandItem = {
       model: "Ecomax Pro 828E",
       faultType: "CODE",
       faultCode: "F.00, .04, .05, .10, .14, .15",
-      faultCause: "All of these are NTC faults, and are best resolved by first changing all NTC \nto make diagnosis earlier."
+      faultCause: "All of these are NTC faults, and are best resolved by first changing all NTC to make diagnosis earlier."
     },
     {
       brand: "Vaillant",
@@ -223,7 +223,7 @@ export const brand_vaillant: BrandItem = {
       model: "Ecomax Pro 828E",
       faultType: "CODE",
       faultCode: "F.11",
-      faultCause: "A blockage in the appliance is preventing the system from flowing as it \nshould."
+      faultCause: "A blockage in the appliance is preventing the system from flowing as it should."
     },
     {
       brand: "Vaillant",
@@ -479,7 +479,7 @@ export const brand_vaillant: BrandItem = {
       model: "EcoTEC Pro / EcoTEC Plus",
       faultType: "CODE",
       faultCode: "F.65",
-      faultCause: "Electronic temperature error could be overheating due to external \ninfluences"
+      faultCause: "Electronic temperature error could be overheating due to external influences"
     },
     {
       brand: "Vaillant",
@@ -528,14 +528,14 @@ export const brand_vaillant: BrandItem = {
       model: "EcoTEC Pro / EcoTEC Plus",
       faultType: "CODE",
       faultCode: "F.74",
-      faultCause: "Water pressure sensor signal outside correct range, the sensor signal is \ntoo high"
+      faultCause: "Water pressure sensor signal outside correct range, the sensor signal is too high"
     },
     {
       brand: "Vaillant",
       model: "EcoTEC Pro / EcoTEC Plus",
       faultType: "CODE",
       faultCode: "F.75",
-      faultCause: "Error with pressure – no pressure change detection when starting the\n pump"
+      faultCause: "Error with pressure – no pressure change detection when starting the pump"
     },
     {
       brand: "Vaillant",
@@ -789,7 +789,7 @@ export const brand_vaillant: BrandItem = {
       model: "EcoTEC Pro / EcoTEC Plus",
       faultType: "CODE",
       faultCode: "S.39",
-      faultCause: "Burner off contact has been triggered this could be because of contact \nthermostat or condensate pump"
+      faultCause: "Burner off contact has been triggered this could be because of contact thermostat or condensate pump"
     },
     {
       brand: "Vaillant",
@@ -824,7 +824,7 @@ export const brand_vaillant: BrandItem = {
       model: "EcoTEC Pro / EcoTEC Plus",
       faultType: "CODE",
       faultCode: "S.53",
-      faultCause: "Boiler is in waiting period of modulation f block function due to water\n shortage"
+      faultCause: "Boiler is in waiting period of modulation f block function due to water shortage"
     },
     {
       brand: "Vaillant",
@@ -966,21 +966,21 @@ export const brand_vaillant: BrandItem = {
       model: "EcoTEC Plus Regular",
       faultType: "CODE",
       faultCode: "S.42",
-      faultCause: "Response from accessory module or defective condensate pump is \nblocking burner operation"
+      faultCause: "Response from accessory module or defective condensate pump is blocking burner operation"
     },
     {
       brand: "Vaillant",
       model: "EcoTEC Plus Regular",
       faultType: "CODE",
       faultCode: "S.53",
-      faultCause: "Appliance is within the waiting period of the block operation function due \nto water shortage"
+      faultCause: "Appliance is within the waiting period of the block operation function due to water shortage"
     },
     {
       brand: "Vaillant",
       model: "EcoTEC Plus Regular",
       faultType: "CODE",
       faultCode: "S.54",
-      faultCause: "Appliance is within the waiting period of the block operation due to water \nshortage"
+      faultCause: "Appliance is within the waiting period of the block operation due to water shortage"
     },
     {
       brand: "Vaillant",
