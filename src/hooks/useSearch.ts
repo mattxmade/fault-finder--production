@@ -22,6 +22,8 @@ const useSearch = () => {
     setQuery(lastSessionQuery);
   }
 
+  const onClearInput = useCallback(() => setQuery(""), []);
+
   const onInputChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       e.preventDefault();
@@ -56,7 +58,7 @@ const useSearch = () => {
     if (results.length) localStorage.setItem("query", query);
   }, [query, results]);
 
-  return { query, results, onInputChange, onFormSubmit };
+  return { query, results, onClearInput, onInputChange, onFormSubmit };
 };
 
 export default useSearch;
